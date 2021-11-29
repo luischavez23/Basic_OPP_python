@@ -5,15 +5,34 @@ class Person:
         self._age = age
     
     @property
-    def name_person(self):
-        return f"{self._first_name} {self._last_name}"
+    def first_name(self):
+        return self._first_name
     
-    @name_person.setter
-    def name_person(self, first_name):
+    @first_name.setter
+    def first_name(self, first_name):
         self._first_name = first_name
 
+    @property
+    def last_name(self):
+        return self._last_name 
     
+    @last_name.setter
+    def last_name(self, last_name):
+        self._last_name = last_name
+
+    @property
+    def age(self):
+        return self._age 
+    
+    @age.setter
+    def age(self, age):
+        self._age = age
+
+    def show_name(self):
+        print(f"Name: {self.first_name} {self.last_name}\nAge: {self.age} years old.")
+
 person1 = Person('Luis', 'Chavez', 31)
-print(person1.name_person)
-person1.name_person = "Pablo"
-print(person1.name_person)
+person1.show_name()
+person1.first_name = "Pablo"
+person1.age = 32
+person1.show_name()
