@@ -19,6 +19,9 @@ class Geometric:
     @length.setter
     def length(self, length):
         self._length = length
+    
+    def __str__(self):
+        return f'Width: {self._width}\nLength: {self._length}'
 
 
 

@@ -1,17 +1,14 @@
-from geometric_figure import *
-from color import *
+from geometric_figure import Geometric
+from color import Color
 
 class Square(Geometric, Color):
     
-    def __init__(self, length, width, color):
-        Geometric.__init__(self, length, width)
+    def __init__(self, measure, color):
+        Geometric.__init__(self, measure, measure)
         Color.__init__(self, color)
     
+    def __str__(self):
+        return f'Square\n{Geometric.__str__(self)}\n{Color.__str__(self)}'
+    
     def area(self):
-        return f'\nSquare\nArea: {self._length*self._width} cm\nColor: {self._color}'
-
-side = int(input('Measure square: '))
-color_square = input('Color square: ')
-square1 = Square(side, side, color_square)
-print(square1.area())
-
+        return f'\nSquare\nArea: {self._length*self._width} cm\n'
